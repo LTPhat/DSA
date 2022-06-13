@@ -58,7 +58,7 @@ void Reverse_k_elements(int k, queue <int> &q){
     }
 }
 
-void Print_Queue(queue <int> &q){
+void Print_Queue(queue <int> q){
     while (!q.empty()){
         cout << q.front() <<" ";
         q.pop();
@@ -78,5 +78,8 @@ int main(){
     int k = 4;
     Print_Queue(q);
     Reverse_k_elements(k,q);
+    cout <<endl;
+    cout <<"After reverse: ";
+    cout <<endl;
     Print_Queue(q);
 }
