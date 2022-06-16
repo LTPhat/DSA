@@ -22,31 +22,31 @@
 
 //Method 1: Using nested loop
 
-// #include<bits/stdc++.h>
+#include<bits/stdc++.h>
 
-// using namespace std;
+using namespace std;
 
 
-// void Max_Subarray(int a[], int size, int k){
-//     int max; 
-//     for (int i = 0; i < size - k; i++){
-//         max = a[i];
-//         for (int j = 1; j < k; j++){
-//             if (a[i+j] > max){
-//                 max = a[i+j];
-//             }
-//         }
-//         cout << max << " ";
-//     }
-// }
+void Max_Subarray(int a[], int size, int k){
+    int max; 
+    for (int i = 0; i < size - k; i++){
+        max = a[i];
+        for (int j = 1; j < k; j++){
+            if (a[i+j] > max){
+                max = a[i+j];
+            }
+        }
+        cout << max << " ";
+    }
+}
 
-// int main(){
-//     int a[] = {1, 2, 3, 1, 4, 5, 2, 3, 6};
-//     int k = 3;
-//     int size = sizeof(a)/sizeof(a[0]);
-//     Max_Subarray(a,size,k);
-//     return 0;
-// }
+int main(){
+    int a[] = {1, 2, 3, 1, 4, 5, 2, 3, 6};
+    int k = 3;
+    int size = sizeof(a)/sizeof(a[0]);
+    Max_Subarray(a,size,k);
+    return 0;
+}
 
 
 //Method 2: Using deque

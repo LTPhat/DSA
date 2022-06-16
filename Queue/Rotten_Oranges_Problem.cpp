@@ -54,68 +54,68 @@
 
 //Method 1: Traverse all the element of the matrix (Nested loop)
 
-// #include<bits/stdc++.h>
+#include<bits/stdc++.h>
 
-// using namespace std; 
+using namespace std; 
 
-// const int Row = 3;
-// const int Column = 3;
+const int Row = 3;
+const int Column = 3;
 
 
-// //Function to check if v[i][j] is in the matrix area.
+//Function to check if v[i][j] is in the matrix area.
 
-// bool Is_in(int i, int j){
-//     return (i >= 0 && i < Row && j >= 0 && j < Column);
-// }
+bool Is_in(int i, int j){
+    return (i >= 0 && i < Row && j >= 0 && j < Column);
+}
 
-// int Min_Time(int a[Row][Column]){   
-//     int count = 0;
-//     int rot = 2;
-//     bool Changed = false;
-//     while (true)
-//     {
-//         for (int i = 0; i < Row; i++){
-//             for (int j = 0; j < Column; j ++){
-//                 if (a[i][j] == rot){
-//                     if (Is_in(i,j-1) && a[i][j-1] == 1){  //Check left
-//                         a[i][j-1] = a[i][j] + 1;
-//                         Changed = true;
-//                     }
-//                     if (Is_in(i,j+1) && a[i][j+1] == 1){   //Check right
-//                         a[i][j+1] = a[i][j] + 1;
-//                         Changed = true;
-//                     }
-//                     if (Is_in(i-1,j) && a[i-1][j] == 1){    //Check up
-//                         a[i-1][j] = a[i][j] + 1;;
-//                         Changed = true;
-//                     }
-//                     if (Is_in(i+1,j) && a[i+1][j] == 1){    //Check down
-//                         a[i+1][j] = a[i][j] + 1;;
-//                         Changed = true;
-//                     }
-//                 }
-//             }
-//         }
-//         if (!Changed){break;}
-//         Changed = false;
-//         rot ++;
-//     }
-//     for(int i = 0; i < Row; i++){
-//         for (int j = 0; j < Column; j++){
-//             if (a[i][j] == 1){
-//                 return -1;
-//             }
-//         }
-//     }
-//     return (rot - 2);
-// }
+int Min_Time(int a[Row][Column]){   
+    int count = 0;
+    int rot = 2;
+    bool Changed = false;
+    while (true)
+    {
+        for (int i = 0; i < Row; i++){
+            for (int j = 0; j < Column; j ++){
+                if (a[i][j] == rot){
+                    if (Is_in(i,j-1) && a[i][j-1] == 1){  //Check left
+                        a[i][j-1] = a[i][j] + 1;
+                        Changed = true;
+                    }
+                    if (Is_in(i,j+1) && a[i][j+1] == 1){   //Check right
+                        a[i][j+1] = a[i][j] + 1;
+                        Changed = true;
+                    }
+                    if (Is_in(i-1,j) && a[i-1][j] == 1){    //Check up
+                        a[i-1][j] = a[i][j] + 1;;
+                        Changed = true;
+                    }
+                    if (Is_in(i+1,j) && a[i+1][j] == 1){    //Check down
+                        a[i+1][j] = a[i][j] + 1;;
+                        Changed = true;
+                    }
+                }
+            }
+        }
+        if (!Changed){break;}
+        Changed = false;
+        rot ++;
+    }
+    for(int i = 0; i < Row; i++){
+        for (int j = 0; j < Column; j++){
+            if (a[i][j] == 1){
+                return -1;
+            }
+        }
+    }
+    return (rot - 2);
+}
 
-// int main(){
-//     int a[Row][Column] = {{2,1,1},{1,1,0},{0,1,1}};
+int main(){
+    int a[Row][Column] = {{2,1,1},{1,1,0},{0,1,1}};
 
-//     cout <<"Min time required so that all oranges are rotten is: " << Min_Time(a);
-//     return 0;
-// }
+    cout <<"Min time required so that all oranges are rotten is: " << Min_Time(a);
+    return 0;
+}
 
 
 //Method 2: Using queue
