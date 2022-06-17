@@ -22,11 +22,64 @@ class Node {
     Node *next;
     Node(){
         data = 0;
-        next = NULL;
     }
     Node (int data){
         this ->data = data;
         next = NULL;
     }
 };
+// void Append_node(Node *head, int value){
+//     Node *new_node = new Node();
+//     new_node->data = value;
+//     new_node ->next = NULL;
+//     if (head == NULL){
+//         head = new_node;
+//     }else{
+//         Node *ptr = head;
+//         while (ptr->next != NULL){
+//             ptr = ptr->next;
+//         }
+//         ptr->next = new_node;
+//     }
+// }
+bool Search (Node *head, int x){
+    Node *current = head;
+    while (current != NULL){
+        if (current->data == x){
+            return true;
+        }
+        current = current->next;
+    }
+    return false;
+}
 
+void Print_list(Node *head){
+    while (head != NULL){
+        cout << head->data << "--->";
+        head = head->next;
+    }
+}
+
+int main(){
+    int size, value, k;
+    cout <<"Enter the size of list: "; cin >> size;
+    cin >> value;
+    Node *head = new Node(value);
+    Node *tail = head;
+    for (int i = 1; i < size; i++){
+        cin >> value;
+        tail->next = new Node(value);
+        tail = tail->next;
+    }
+    cout <<"List enterd: ";
+    Print_list(head);
+    cout <<"\nEnter the value to find "; 
+    cin >> k;
+    bool ans = Search(head, k);
+    if (ans == true){
+        cout << "True";
+    }else{
+        cout << "False";
+    }
+   return 0;
+}
