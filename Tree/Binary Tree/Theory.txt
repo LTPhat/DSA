@@ -1,0 +1,186 @@
+Tree is a popular data structure which is non linear in nature. Unlike other data structures like array, stack, queue, and linked list that are linear in nature, a tree represents hierarchical structure. The ordering information of tree is not important. A tree contains nodes and 2 pointers. These two pointers are the left child and the right child of the parent node. Let us understand the terms of tree in detail.
+
+Root: The root of a tree is the top most node of the tree that has no parent node. There is only one root node in every tree.
+Edge: Edge acts as a link between the parent node and the child node.
+Leaf: A node that has no child is known as the leaf node. It is the last node of the tree. There can be multiple leaf nodes in a tree.
+Depth: Depth of the node is the distance from the root node to that particular node.
+Height: The height of the node is the distance from that node to the deepest node of the tree.
+Height of tree: Height of the tree is the maximum height of any node.
+
+      tree
+      ----
+       j    <-- root
+     /   \
+    f      k  
+  /   \      \
+ a     h      z    <-- leaves
+Why Use Trees? 
+1. One reason to use trees might be because you want to store information that naturally forms a hierarchy. For example, the file system on a computer: 
+
+file system
+-----------
+     /    <-- root
+  /      \
+...       home
+      /          \
+   ugrad        course
+    /       /      |     \
+  ...      cs101  cs112  cs113
+2. Trees (with some ordering e.g., BST) provide moderate access/search (quicker than Linked List and slower than arrays). 
+3. Trees provide moderate insertion/deletion (quicker than Arrays and slower than Unordered Linked Lists). 
+4. Like Linked Lists and unlike Arrays, Trees don’t have an upper limit on number of nodes as nodes are linked using pointers.
+ 
+
+Main applications of trees include: 
+1. Manipulate hierarchical data. 
+2. Make information easy to search (see tree traversal). 
+3. Manipulate sorted lists of data. 
+4. As a workflow for compositing digital images for visual effects. 
+5. Router algorithms 
+6. Form of a multi-stage decision-making (see business chess). 
+
+Binary Tree: A tree whose elements have at most 2 children is called a binary tree. Since each element in a binary tree can have only 2 children, we typically name them the left and right child. 
+Binary Tree Representation: A tree is represented by a pointer to the topmost node in tree. If the tree is empty, then value of root is NULL. 
+A Tree node contains following parts. 
+1. Data 
+2. Pointer to left child 
+3. Pointer to right child
+In C, we can represent a tree node using structures. In other languages we can use classes as part of their OOP feature. Below is an example of a tree node with an integer data.
+
+Basic Operation On Binary Tree:
+
+Inserting an element.
+Removing an element.
+Searching for an element.
+Traversing an element. There are three types of traversals in binary tree which will be discussed ahead.
+Auxiliary Operation On Binary Tree:
+
+Finding the height of the tree
+Find the level of the tree
+Finding the size of the entire tree.
+Applications of Binary Tree:
+
+In compilers, Expression Trees are used which is an application of binary tree.
+Huffman coding trees are used in data compression algorithms.
+Priority Queue is another application of binary tree that is used for searching maximum or minimum in O(logn) time complexity.
+Binary Tree Traversals:
+
+PreOrder Traversal: Here, the traversal is : root – left child – right child. It means that the root node is traversed first then its left child and finally the right child.
+InOrder Traversal: Here, the traversal is : left child – root – right child.  It means that the left child is traversed first then its root node and finally the right child.
+PostOrder Traversal: Here, the traversal is : left child – right child – root.  It means that the left child is traversed first then the right child and finally its root node.
+Let us traverse the following tree with all the three traversal methods:
+
+Tree
+________________
+
+                 1 //Root Node
+                / \
+               2    3
+              / \  / \
+             4  5  6  7 //Leaf Nodes
+PreOrder Traversal of the above tree: 1-2-4-5-3-6-7
+
+InOrder Traversal of the above tree: 4-2-5-1-6-3-7
+
+PostOrder Traversal of the above tree: 4-5-2-6-7-3-1
+
+
+
+
+The following are common types of Binary Trees. 
+
+1) Full Binary Tree:-
+
+A Binary Tree is a full binary tree if every node has 0 or 2 children. The following are the examples of a full binary tree. We can also say a full binary tree is a binary tree in which all nodes except leaf nodes have two children. 
+
+A full Binary tree is a special type of binary tree in which every parent node/internal node has either two or no children. It is also known as a proper binary tree.
+
+               18
+           /       \  
+         15         30  
+        /  \        /  \
+      40    50    100   40
+
+             18
+           /    \   
+         15     20    
+        /  \       
+      40    50   
+    /   \
+   30   50
+
+               18
+            /     \  
+          40       30  
+                   /  \
+                 100   40
+2) Complete Binary Tree:-
+
+A Binary Tree is a Complete Binary Tree if all the levels are completely filled except possibly the last level and the last level has all keys as left as possible.
+
+A complete binary tree is just like a full binary tree, but with two major differences:
+
+Every level must be completely filled
+All the leaf elements must lean towards the left.
+The last leaf element might not have a right sibling i.e. a complete binary tree doesn’t have to be a full binary tree.
+The following are examples of Complete Binary Trees.
+
+               18
+           /       \  
+         15         30  
+        /  \        /  \
+      40    50    100   40
+
+
+               18
+           /       \  
+         15         30  
+        /  \        /  \
+      40    50    100   40
+     /  \   /
+    8   7  9 
+Practical example of Complete Binary Tree is Binary Heap. 
+
+3) Perfect Binary Tree:-
+
+A Binary tree is a Perfect Binary Tree in which all the internal nodes have two children and all leaf nodes are at the same level. 
+The following are the examples of Perfect Binary Trees. 
+
+A perfect binary tree is a type of binary tree in which every internal node has exactly two child nodes and all the leaf nodes are at the same level.
+
+               18
+           /       \  
+         15         30  
+        /  \        /  \
+      40    50    100   40
+
+
+               18
+           /       \  
+         15         30  
+In a Perfect Binary Tree, the number of leaf nodes is the number of internal nodes plus 1   
+
+L = I + 1 Where L = Number of leaf nodes, I = Number of internal nodes.
+
+A Perfect Binary Tree of height h (where the height of the binary tree is the number of edges in the longest path from the root node to any leaf node in the tree, height of root node is 0) has 2h+1 – 1 node. 
+
+An example of a Perfect binary tree is ancestors in the family. Keep a person at root, parents as children, parents of parents as their children. 
+
+Balanced Binary Tree:-
+A binary tree is balanced if the height of the tree is O(Log n) where n is the number of nodes. For Example, the AVL tree maintains O(Log n) height by making sure that the difference between the heights of the left and right subtrees is at most 1. Red-Black trees maintain O(Log n) height by making sure that the number of Black nodes on every root to leaf paths is the same and there are no adjacent red nodes. Balanced Binary Search trees are performance-wise good as they provide O(log n) time for search, insert and delete. 
+
+It is a type of binary tree in which the difference between the height of the left and the right subtree for each node is either 0 or 1.
+
+4) A degenerate (or pathological) tree:-
+
+A Tree where every internal node has one child. Such trees are performance-wise same as linked list. 
+
+A degenerate or pathological tree is the tree having a single child either left or right.
+
+      10
+      /
+    20
+     \
+     30
+      \
+      40     
