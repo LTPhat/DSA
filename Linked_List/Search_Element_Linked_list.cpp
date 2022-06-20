@@ -28,20 +28,20 @@ class Node {
         next = NULL;
     }
 };
-// void Append_node(Node *head, int value){
-//     Node *new_node = new Node();
-//     new_node->data = value;
-//     new_node ->next = NULL;
-//     if (head == NULL){
-//         head = new_node;
-//     }else{
-//         Node *ptr = head;
-//         while (ptr->next != NULL){
-//             ptr = ptr->next;
-//         }
-//         ptr->next = new_node;
-//     }
-// }
+void Append_node(Node *head, int value){
+    Node *new_node = new Node();
+    new_node->data = value;
+    new_node ->next = NULL;
+    if (head == NULL){
+        head = new_node;
+    }else{
+        Node *ptr = head;
+        while (ptr->next != NULL){
+            ptr = ptr->next;
+        }
+        ptr->next = new_node;
+    }
+}
 bool Search (Node *head, int x){
     Node *current = head;
     while (current != NULL){
@@ -71,7 +71,7 @@ int main(){
         tail->next = new Node(value);
         tail = tail->next;
     }
-    cout <<"List enterd: ";
+    cout <<"List entered: ";
     Print_list(head);
     cout <<"\nEnter the value to find "; 
     cin >> k;
