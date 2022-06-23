@@ -128,8 +128,7 @@ class BST{
     void Print_Level(TreeNode *head, int level){
         if (head == NULL){
             return;
-        }
-        if (level == 0){
+        }else if (level == 0){
             cout << head->value<< " ";
         }else{ //when level > 0
             Print_Level(head->left, level - 1);
@@ -139,7 +138,7 @@ class BST{
 
     void BFS_Traversal(TreeNode *head){
         int h = Height(head);
-        for (int i = 0; i < h; i++){
+        for (int i = 0; i <= h; i++){
             Print_Level(head, i);
         }
     }
