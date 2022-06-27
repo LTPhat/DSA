@@ -1,0 +1,7 @@
+AVL tree is a self-balancing Binary Search Tree (BST) where the difference between heights of left and right subtrees cannot be more than one for all nodes. This difference is called the Balance Factor.
+In order to perform this balancing, we perform ROTATIONs on the unbalanced/imbalanced Binary Search Tree to make it a AVL tree.
+We peform 4 basic rotations depending of 4 difference cases -
+1) Left Rotation
+2) Right Rotation
+3) Left Right Rotation
+4) Right Left Rotation
