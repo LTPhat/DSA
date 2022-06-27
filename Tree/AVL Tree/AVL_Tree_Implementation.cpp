@@ -294,10 +294,9 @@ int main() {
       cout << endl;
       break;
     case 2:
-      cout << "SEARCH" << endl;
+      cout << "--SEARCH OPERATION---" << endl;
       cout << "Enter VALUE of TREE NODE to SEARCH in AVL Tree: ";
       cin >> val;
-      //new_node = obj.iterativeSearch(val);
       new_node = obj.Search_node(val);
       if (new_node != NULL) {
         cout << "Value found" << endl;
@@ -318,7 +317,7 @@ int main() {
       }
       break;
     case 4:
-      cout << "PRINT 2D: " << endl;
+      cout << "AVL TREE: " << endl;
       obj.Print_2d(obj.root, 5);
       cout << endl;
       cout <<"Print Level Order BFS: \n";
@@ -332,6 +331,7 @@ int main() {
       	      cout<<endl;
       	      cout <<"POST-ORDER: ";
       	      obj.Print_Postorder(obj.root);
+              cout<<endl;
       break;
     case 5:
       cout << "TREE HEIGHT" << endl;
