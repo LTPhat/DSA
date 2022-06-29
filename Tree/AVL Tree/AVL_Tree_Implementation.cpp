@@ -152,7 +152,7 @@ class AVLTree{
     }
     //FUNCTION TO INSERT NODE USING RECURSION
     Treenode *Insert_node(Treenode *head, Treenode *new_node){
-        if (head == NULL){
+        if (head == NULL){ // Base case of recursion function
             head = new_node;
             return head;
         }
@@ -195,7 +195,7 @@ class AVLTree{
         return current;
     }
     Treenode *Delete_node(Treenode *head, int val){
-        if (head == NULL){
+        if (head == NULL){ // Base case of recursion function
             return head;
         }
         if (val < head->value){ //If value less than head, move to left sub tree
@@ -215,9 +215,11 @@ class AVLTree{
                 return temp;
             }else{ //Node has 2 children
                 Treenode *temp = Minvalue_node(head->right);
-                head->value = temp->value;
+                // Get the minvalue of the right subtree of the node to be deleted
+                head->value = temp->value; // Delete the node and replace with that min minimun value
                 head->right = Delete_node(head->right, temp->value);
-            }
+                //Delete the minimum value 
+            }   
         }
         //Check balanced factor and rotate if AVL tree is not balanced
             //Case 1: bf = 2
