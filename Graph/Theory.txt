@@ -1,0 +1,45 @@
+DEFINITION
+
+Graph consists of a finite set of vertices (or nodes) and set of Edges(or Links) which connect a pair of node.
+A graph is a non-linear data structure consisting of nodes and edges.
+
+
+TYPE OF GRAPH
+
+1) Directed Graph(Digraph)
+- A directed graph is a set of vertices (nodes) connected by edges, with each node having a direction associated with it.
+- Edges are usually represented by arrow pointing in the direction the graph can be traversed.
+
+2) Undirected Graph
+- In an undirected graph the edges are bidirectional, with no direction associated with them.
+- Hence, the graph can be traversed in either direction.
+- The absence of an arrow tells us that the graph is undirected.
+
+3) Weighted Graph
+- A weighted graph is a graph in which each branch is given a numerical weight.
+
+4) Unweighted Graph
+- An unweighted graph is a graph in which all edges/paths are considered to have same weight.
+
+
+REPRESENTING GRAPH
+
+1) Adjacency matrix:
+
+An adjacency matrix is a way of representing a graph as a matrix of boolean (0's or 1's).
+A finite graph can be represented in the form of a square matrix on a computer, where the boolean value of the maxtrix
+indices if there is a direct path between two vertices.
+
+Let's assume the n x n matrix as adjacency matrix adj[n][n]
+
+If there is an edge from vertex i to j, mark adj[i][j] as 1.
+If there is no edge from vertex i to j, mark adj[i][j] as 0.
+
+Adjacency Matrix Implementation of Graph is preffered only when the graph is DENSE and the Number of Vertices is relatively less.
+
+
+2) Adjacency List:
+
+In an adjacency list, we use an array of a list to represent the graph.
+The size of the array is equal to the number of vertices.
+Let the array be an array[]. An entry array[i] represents the list of vertices adjacent to the i_th vertex.
